@@ -1,7 +1,7 @@
 import re
 
 n = input("Enter an input:")
-x = "([[A-Z]{1}+[a-zA-Z]+\d{1}+\W{1}]{8}+$)"
+x = "('^(?=\S{8,20}$)(?=.?\d)(?=.?[a-z])(?=.?[A-Z])(?=.?[^A-Za-z\s0-9])')"
 match = re.fullmatch(x, n)
 if match is not None:
     print("valid")
